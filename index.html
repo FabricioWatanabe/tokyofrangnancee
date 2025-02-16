@@ -3,58 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tokyo Fragrance - Imagens dos Perfumes</title>
+    <title>Tokyo Fragrance - Catálogo de Perfumes</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
             text-align: center;
-            background-color: #f4f4f4;
+            background-color: #1a1a2e;
+            color: white;
         }
         header {
-            background-color: #f8b400;
+            background: url('https://source.unsplash.com/1600x900/?tokyo,city') center/cover;
             color: white;
-            padding: 20px 0;
-            font-size: 24px;
+            padding: 50px 0;
+            font-size: 32px;
             font-weight: bold;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
         }
         .gallery {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
-            padding: 20px;
-        }
-        .gallery img {
-            width: 300px;
-            height: auto;
-            border-radius: 10px;
-            border: 2px solid #ddd;
-            padding: 10px;
-            background: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 40px;
         }
         .product-card {
-            background: white;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             text-align: center;
             width: 320px;
+            transition: transform 0.3s;
+        }
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+        .product-card img {
+            width: 280px;
+            height: auto;
+            border-radius: 10px;
+            border: 3px solid #f8b400;
+            padding: 5px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         .product-card h3 {
-            color: #333;
+            color: #f8b400;
+            margin-top: 10px;
         }
         .product-card p {
-            color: #666;
+            color: #ddd;
             font-size: 14px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Tokyo Fragrance - Catálogo de Perfumes</h1>
+        <h1>Tokyo Fragrance - Inspirado no Japão</h1>
     </header>
     <div class="gallery">
         <div class="product-card">
