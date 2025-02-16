@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -36,6 +35,7 @@
             padding: 5px;
             border-radius: 5px;
             color: white;
+            cursor: pointer;
         }
         .available {
             background-color: #4CAF50;
@@ -51,28 +51,58 @@
         <p>Confira nossas fragrâncias disponíveis no Japão 🇯🇵</p>
     </header>
 
-    <div class="product">
-        <img src="image.png" alt="Perfume Floral">
-        <h3>Lattafa Yara</h3>
-        <p>Uma fragrância delicada e encantadora.</p>
-        <p><strong>Preço: ¥7000</strong></p>
-        <div class="status available">Disponível</div>
-    </div>
+    <div id="catalog"></div>
 
-    <div class="product">
-        <img src="image.png" alt="Perfume Amadeirado">
-        <h3>Lattafa Asad</h3>
-        <p>Notas sofisticadas para momentos especiais.</p>
-        <p><strong>Preço: ¥9999</strong></p>
-        <div class="status unavailable">Esgotado</div>
-    </div>
+    <script>
+        const products = [
+            {
+                name: "Asad - Lattafa",
+                description: "Uma fragrância intensa e marcante com notas orientais.",
+                price: "¥7000",
+                image: "/mnt/data/image.png",
+                available: true
+            },
+            {
+                name: "Khamrah - Lattafa",
+                description: "Notas quentes e envolventes para ocasiões especiais.",
+                price: "¥8000",
+                image: "/mnt/data/image.png",
+                available: true
+            },
+            {
+                name: "Yara - Lattafa",
+                description: "Uma essência doce e sofisticada, perfeita para o dia a dia.",
+                price: "¥6500",
+                image: "/mnt/data/image.png",
+                available: true
+            }
+        ];
 
-    <div class="product">
-        <img src="image.png" alt="Perfume Cítrico">
-        <h3>Lattafa khamrah</h3>
-        <p>Fresco e vibrante para o dia a dia.</p>
-        <p><strong>Preço: ¥9000</strong></p>
-        <div class="status available">Disponível</div>
-    </div>
+        function renderCatalog() {
+            const catalog = document.getElementById('catalog');
+            catalog.innerHTML = '';
+
+            products.forEach((product, index) => {
+                catalog.innerHTML += `
+                    <div class="product">
+                        <img src="${product.image}" alt="${product.name}">
+                        <h3>${product.name}</h3>
+                        <p>${product.description}</p>
+                        <p><strong>Preço: ${product.price}</strong></p>
+                        <div class="status ${product.available ? 'available' : 'unavailable'}" onclick="toggleStatus(${index})">
+                            ${product.available ? 'Disponível' : 'Esgotado'}
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function toggleStatus(index) {
+            products[index].available = !products[index].available;
+            renderCatalog();
+        }
+
+        renderCatalog();
+    </script>
 </body>
 </html>
