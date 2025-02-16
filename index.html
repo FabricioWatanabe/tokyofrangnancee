@@ -10,6 +10,14 @@
             margin: 0;
             padding: 0;
             text-align: center;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #f8b400;
+            color: white;
+            padding: 20px 0;
+            font-size: 24px;
+            font-weight: bold;
         }
         .gallery {
             display: flex;
@@ -19,23 +27,51 @@
             padding: 20px;
         }
         .gallery img {
-            width: 250px;
+            width: 300px;
             height: auto;
             border-radius: 10px;
-            border: 1px solid #ddd;
-            padding: 5px;
-            background: #fff;
+            border: 2px solid #ddd;
+            padding: 10px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .product-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 320px;
+        }
+        .product-card h3 {
+            color: #333;
+        }
+        .product-card p {
+            color: #666;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Tokyo Fragrance - Imagens dos Perfumes</h1>
+        <h1>Tokyo Fragrance - Catálogo de Perfumes</h1>
     </header>
     <div class="gallery">
-        <img src="imagens/asad.png" alt="Asad - Lattafa">
-        <img src="imagens/khamrah.png" alt="Khamrah - Lattafa">
-        <img src="imagens/yara.png" alt="Yara - Lattafa">
+        <div class="product-card">
+            <img src="imagens/asad.png" alt="Asad - Lattafa">
+            <h3>Asad - Lattafa</h3>
+            <p>Uma fragrância intensa e marcante com notas orientais.</p>
+        </div>
+        <div class="product-card">
+            <img src="imagens/khamrah.png" alt="Khamrah - Lattafa">
+            <h3>Khamrah - Lattafa</h3>
+            <p>Notas quentes e envolventes para ocasiões especiais.</p>
+        </div>
+        <div class="product-card">
+            <img src="imagens/yara.png" alt="Yara - Lattafa">
+            <h3>Yara - Lattafa</h3>
+            <p>Uma essência doce e sofisticada, perfeita para o dia a dia.</p>
+        </div>
     </div>
 </body>
 </html>
